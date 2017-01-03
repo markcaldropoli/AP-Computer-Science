@@ -8,9 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.Timer;
 
-public class CrapsTable extends JPanel
-                        implements ActionListener
-{
+public class CrapsTable extends JPanel implements ActionListener {
   private RollingDie die1, die2;
   private final int delay = 20;
   private Timer clock;
@@ -18,8 +16,7 @@ public class CrapsTable extends JPanel
   private DisplayPanel display;
 
   // Constructor
-  public CrapsTable(DisplayPanel displ)
-  {
+  public CrapsTable(DisplayPanel displ) {
     setBackground(Color.green);
     setBorder(new LineBorder(Color.ORANGE.darker(), 3));
     display = displ;
@@ -31,8 +28,7 @@ public class CrapsTable extends JPanel
 
   // Rolls the dice (called when the "Roll" button
   // is clicked)
-  public void rollDice()
-  {
+  public void rollDice() {
     RollingDie.setBounds(3, getWidth() - 3, 3, getHeight() - 3);
     die1.roll();
     die2.roll();
@@ -40,19 +36,15 @@ public class CrapsTable extends JPanel
   }
 
   // Processes timer events
-  public void actionPerformed(ActionEvent e)
-  {
-    if (diceAreRolling())
-    {
+  public void actionPerformed(ActionEvent e) {
+    if (diceAreRolling()) {
       if (!clock.isRunning())
         clock.restart();
       if (die1.isRolling())
         die1.avoidCollision(die2);
       else if (die2.isRolling())
         die2.avoidCollision(die1);
-    }
-    else
-    {
+    } else {
       clock.stop();
       int total = die1.getNumDots() + die2.getNumDots();
       int result = game.processRoll(total);
@@ -65,14 +57,12 @@ public class CrapsTable extends JPanel
 
   // returns true if dice are still rolling; otherwise
   // returns false
-  public boolean diceAreRolling()
-  {
+  public boolean diceAreRolling() {
     return die1.isRolling() || die2.isRolling();
   }
 
   // Called automatically after a repaint request
-  public void paintComponent(Graphics g)
-  {
+  public void paintComponent(Graphics g) {
     super.paintComponent(g);
     die1.draw(g);
     die2.draw(g);
