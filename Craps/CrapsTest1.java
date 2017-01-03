@@ -12,16 +12,13 @@ import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
-public class CrapsTest1 extends JFrame
-    implements ActionListener
-{
+public class CrapsTest1 extends JFrame implements ActionListener {
   private CrapsGame game;
   private JTextField input;
   private JTextArea display;
 
   // Constructor
-  public CrapsTest1()
-  {
+  public CrapsTest1() {
     super("Craps: Test 1");
 
     Container c = getContentPane();
@@ -45,8 +42,7 @@ public class CrapsTest1 extends JFrame
 
   // Called when a number is entered into the JTextField input
   //
-  public void actionPerformed(ActionEvent e)
-  {
+  public void actionPerformed(ActionEvent e) {
     String s = input.getText().trim();
     int total = Integer.parseInt(s);
     int result = game.processRoll(total);
@@ -55,8 +51,7 @@ public class CrapsTest1 extends JFrame
     display.append(total + ":  Result = " + result + " Point = " + point + "\n");
   }
 
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     CrapsTest1 window = new CrapsTest1();
     window.setBounds(100, 100, 300, 240);
     window.setDefaultCloseOperation(EXIT_ON_CLOSE);
