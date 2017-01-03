@@ -6,13 +6,11 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 
 public class ControlPanel extends JPanel
-    implements ActionListener
-{
+    implements ActionListener {
   private CrapsTable table;
 
   // Constructor
-  public ControlPanel(CrapsTable t)
-  {
+  public ControlPanel(CrapsTable t) {
     table = t;
     JButton rollButton = new JButton("Roll");
     rollButton.addActionListener(this);
@@ -20,8 +18,7 @@ public class ControlPanel extends JPanel
   }
 
   // Called when the roll button is clicked
-  public void actionPerformed(ActionEvent e)
-  {
+  public void actionPerformed(ActionEvent e) {
     if (!table.diceAreRolling())
       table.rollDice();
   }
