@@ -6,10 +6,8 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.border.EmptyBorder;
 
-public class Craps extends JFrame
-{
-  public Craps()
-  {
+public class Craps extends JFrame {
+  public Craps() {
     super("Craps");
 
     DisplayPanel display = new DisplayPanel();
@@ -27,8 +25,7 @@ public class Craps extends JFrame
     c.add(panel, BorderLayout.CENTER);
   }
 
-  public static void main(String[] args)
-  {
+  public static void main(String[] args) {
     Craps window = new Craps();
     window.setBounds(100, 100, 320, 240);
     window.setDefaultCloseOperation(EXIT_ON_CLOSE);
