@@ -5,8 +5,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 
-public class ControlPanel extends JPanel
-    implements ActionListener {
+public class ControlPanel extends JPanel implements ActionListener {
   private CrapsTable table;
 
   // Constructor
