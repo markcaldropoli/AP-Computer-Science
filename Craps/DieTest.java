@@ -1,5 +1,4 @@
 public class DieTest {
-
   public static void main(String [] args) {
     Die die = new Die();
     die.roll();
@@ -13,5 +12,4 @@ public class DieTest {
     die.roll();
     System.out.println(die.getNumDots());
   }
-  
 }
