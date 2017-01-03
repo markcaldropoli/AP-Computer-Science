@@ -1,7 +1,6 @@
 // Implements the game of Craps logic
 
-public class CrapsGame
-{
+public class CrapsGame {
   private int point = 0;
   
   /**
@@ -12,8 +11,7 @@ public class CrapsGame
    *  Returns 1 if player won, -1 if player lost,
    *  0 if player continues rolling.
    */
-  public int processRoll(int total)
-  {
+  public int processRoll(int total) {
     int result;
     if (point == 0){
       if (total == 7 || total == 11) {
@@ -43,8 +41,7 @@ public class CrapsGame
   /**
    *  Returns the saved point
    */
-  public int getPoint()
-  {
+  public int getPoint() {
     return point;
   }
 }
