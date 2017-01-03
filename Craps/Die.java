@@ -1,6 +1,5 @@
 
-public class Die
-{
+public class Die {
   private int rollNumber;
   public void roll() {
     int range = (6 - 1) + 1;
