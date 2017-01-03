@@ -8,15 +8,12 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class CrapsStats extends JFrame
-    implements ActionListener
-{
+public class CrapsStats extends JFrame implements ActionListener {
   private CrapsGame game;
   private JTextField numberIn, statsOut;
 
   // Constructor
-  public CrapsStats()
-  {
+  public CrapsStats() {
     super("Craps test");
 
     Container c = getContentPane();
@@ -36,16 +33,14 @@ public class CrapsStats extends JFrame
   }
 
   // Called when a number is entered in the numberIn text field
-  public void actionPerformed(ActionEvent e)
-  {
+  public void actionPerformed(ActionEvent e) {
     String s = numberIn.getText();
     int nGames = Integer.parseInt(s);
     int result, gameCount = 0, winCount = 0;
     Die die1 = new Die();
     Die die2 = new Die();
 
-    while (gameCount < nGames)
-    {
+    while (gameCount < nGames) {
       die1.roll();
       die2.roll();
       int total = die1.getNumDots() + die2.getNumDots();
@@ -59,8 +54,7 @@ public class CrapsStats extends JFrame
     statsOut.setText(" Games: " + gameCount + " Wins: " + winCount);
   }
 
-  public static void main(String args[])
-  {
+  public static void main(String args[]) {
     CrapsStats window = new CrapsStats();
     window.setBounds(100, 100, 300, 100);
     window.setDefaultCloseOperation(EXIT_ON_CLOSE);
